@@ -1,5 +1,5 @@
 import argparse
-import docker_scripts
+from modules import docker_scripts
 
 
 def main():

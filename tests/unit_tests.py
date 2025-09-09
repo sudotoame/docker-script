@@ -2,7 +2,7 @@ import unittest
 
 from unittest.mock import patch, MagicMock
 
-import docker_scripts
+from modules import docker_scripts
 
 
 class TestCheckDockerVersion(unittest.TestCase):
