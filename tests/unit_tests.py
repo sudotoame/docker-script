@@ -25,5 +25,5 @@ class TestCheckDockerVersion(unittest.TestCase):
             docker_scripts.check_docker_version()
 
 
-if __name__ == "__main__":
-    unittest.main()
+# if __name__ == "__main__":
+# unittest.main()
