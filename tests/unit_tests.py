@@ -2,7 +2,7 @@ import unittest
 
 from unittest.mock import patch, MagicMock
 
-from src.docker_scripts import check_docker_version
+import docker_scripts
 
 
 class TestCheckDockerVersion(unittest.TestCase):
@@ -12,7 +12,7 @@ class TestCheckDockerVersion(unittest.TestCase):
         mock_client_instance.version.return_value = {"Version": "20.10.12"}
         mock_docker_client.return_value = mock_client_instance
 
-        version = check_docker_version()
+        version = docker_scripts.check_docker_version()
         self.assertEqual(version, "20.10.12")
 
     @patch("docker.from_env")
@@ -22,7 +22,7 @@ class TestCheckDockerVersion(unittest.TestCase):
         mock_docker_client.return_value = mock_client_instance
 
         with self.assertRaises(Exception):
-            check_docker_version()
+            docker_scripts.check_docker_version()
 
 
 if __name__ == "__main__":
